@@ -16,7 +16,7 @@
 ```
 (.wttd) ➜  wttd git:(main) pip install -r requirements.txt  
 ```
-## Criação do projeto django
+## Criação do projeto django eventex
 ```
 (.wttd) ➜  wttd git:(main) django-admin startproject eventex .  
 ```
@@ -36,7 +36,7 @@
 (.wttd) ➜  eventex git:(main) manage startapp core
 ```
  
-## Configuração do arquivo settings com a app core
+## Configuração do arquivo settings.py com a app core
 ```
 # Application definition
 
@@ -50,3 +50,30 @@ INSTALLED_APPS = [
     'eventex.core',
 ]
 ```
+## Atualização das rotas no arquivo urls.py
+
+```
+from django.contrib import admin
+from django.urls import path
+import eventex.core.views
+
+urlpatterns = [
+    path('', eventex.core.views.home),
+    path('admin/', admin.site.urls),
+]
+```
+
+## Criação da função home no arquivo core/views.py
+
+```
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'index.html')
+```
+
+## Criar os diretórios templates/ e static/ dentro de core/
+
+* As pastas de css, fonts, js e img ficam dentro de static/
+* O html fica na pasta templates/
+
