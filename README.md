@@ -90,7 +90,18 @@ O diretório eventex/ é o pacote Python para o projeto. Seu nome é o nome do p
 ```
 (.wttd) ➜  wttd git:(main) cd eventex     
 (.wttd) ➜  eventex git:(main) manage startapp core
+
+core/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    views.py
 ```
+Cada aplicação que você escreve no Django consiste de um pacote Python que segue uma certa convenção. O Django vem com um utilitário que gera automaticamente a estrutura básica de diretório de uma aplicação, então você pode se concentrar apenas em escrever código em vez de ficar criando diretórios.
  
 ## Configuração do arquivo settings.py com a app core
 ```
