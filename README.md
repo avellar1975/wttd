@@ -39,6 +39,8 @@
 ➜  ~ cd wttd
 ➜  wttd git:(main) 
 ```
+O diretório wttd/ é um contêiner para o seu projeto. Seu nome não importa para o Django; você pode renomeá-lo para qualquer nome que você quiser.
+
 ## Criação e ativação de um ambiente virtual
 <img src='https://miro.medium.com/max/750/1*Z14kLUEB69SsYdNORxQzlw.jpeg' width='200' align='right'>
 
@@ -72,6 +74,8 @@ wttd/
         wsgi.py
 
 ```
+O diretório eventex/ é o pacote Python para o projeto. Seu nome é o nome do pacote Python que você vai precisar usar para importar coisas do seu interior (por exemplo, eventex.urls).
+
 ## Criaçao de um alias do manage.py
 
 ```
