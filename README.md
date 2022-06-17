@@ -62,9 +62,9 @@
 (.wttd) ➜  wttd git:(main) django-admin startproject eventex .  
 
 
-mysite/
+wttd/
     manage.py
-    mysite/
+    eventex/
         __init__.py
         settings.py
         urls.py
