@@ -3,6 +3,36 @@
 <br/>
 <br/>
 
+<h2>Qual versão do Python eu posso usar com Django?</h2>
+<table>
+<colgroup>
+<col width="19%">
+<col width="81%">
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Versão do Django</th>
+<th class="head">Versões do Python</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>2.2</td>
+<td>3.5, 3.6, 3.7, 3.8 (adicionado em 2.2.8), 3.9 (adicionado em 2.2.17)</td>
+</tr>
+<tr class="row-odd"><td>3.0</td>
+<td>3.6, 3.7, 3.8, 3.9 (adicionado em 3.0.11)</td>
+</tr>
+<tr class="row-even"><td>3.1</td>
+<td>3.6, 3.7, 3.8, 3.9 (adicionado em 3.1.3)</td>
+</tr>
+<tr class="row-odd"><td>3.2</td>
+<td>3.6, 3.7, 3.8, 3.9, 3.10 (adicionado em 3.2.9)</td>
+</tr>
+<tr class="row-even"><td>4.0</td>
+<td>3.8, 3.9, 3.10</td>
+</tr>
+</tbody>
+</table>
+
 ## Criação do diretório do repositório do projeto
 ```
 ➜  ~ mkdir wttd
@@ -21,9 +51,26 @@
 ```
 (.wttd) ➜  wttd git:(main) pip install -r requirements.txt  
 ```
+> Ou instalar o django
+```
+(.wttd) ➜  wttd git:(main) pip install django
+(.wttd) ➜  wttd git:(main) python -m django --version
+```
+
 ## Criação do projeto django eventex
 ```
 (.wttd) ➜  wttd git:(main) django-admin startproject eventex .  
+
+
+mysite/
+    manage.py
+    mysite/
+        __init__.py
+        settings.py
+        urls.py
+        asgi.py
+        wsgi.py
+
 ```
 ## Criaçao de um alias do manage.py
 
