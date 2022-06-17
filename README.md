@@ -1,18 +1,23 @@
-# Site desenvolvido com Django - estudo
+<img src='https://bmcoder.com/images/python_django_development.png' width='150' align='right'>
+<h1>Site desenvolvido com Django - estudo</h1>
+<br/>
+<br/>
 
-## Criação do diretório do respositório do projeto
+## Criação do diretório do repositório do projeto
 ```
 ➜  ~ mkdir wttd
 ➜  ~ cd wttd
 ➜  wttd git:(main) 
 ```
 ## Criação e ativação de um ambiente virtual
+<img src='https://miro.medium.com/max/750/1*Z14kLUEB69SsYdNORxQzlw.jpeg' width='200' align='right'>
+
 ```
 ➜  wttd git:(main) python -m venv .wttd
 ➜  wttd git:(main) source .wttd/bin/activate 
 (.wttd) ➜  wttd git:(main)
 ```
-> Se tiver feito o clone do projeto será necessário a instalação do requerements.txt
+> Se tiver feito o clone do projeto será necessário a instalação do requirements.txt
 ```
 (.wttd) ➜  wttd git:(main) pip install -r requirements.txt  
 ```
@@ -85,6 +90,8 @@ def home(request):
 <script src = "{% static 'js/main.js' %}"></script>
 ```
 ## Fazendo deploy em produção
+<img src='https://www3.assets.heroku.com/assets/home/hero/focus-647c57d2effb7d2dfb5871161afab3cf097de6339c02e85d84ea14747800fcb0.png' width='200' align='right'>
+
 * Criar uma conta no https://www.heroku.com
 * Instalar o Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
   * ```$ curl https://cli-assets.heroku.com/install-ubuntu.sh | sh```
