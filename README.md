@@ -84,5 +84,10 @@ def home(request):
 ```
 <script src = "{% static 'js/main.js' %}"></script>
 ```
-
+## Fazendo deploy em produção
+* Criar uma conta no https://www.heroku.com
+* Instalar o Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
+  * ```$ curl https://cli-assets.heroku.com/install-ubuntu.sh | sh```
+* Verificar a instalação ```$ heroku --version```
+* Fazer login no heroku via Heroku CLI ```$ heroku login```
 
