@@ -77,3 +77,12 @@ def home(request):
 * As pastas de css, fonts, js e img ficam dentro de static/
 * O html fica na pasta templates/
 
+## Template tag {% load static %}
+
+* No início do arquivo htlm inserir o template tag do django
+* Substituir os caminhos dos arquivos estáticos
+```
+<script src = "{% static 'js/main.js' %}"></script>
+```
+
+
