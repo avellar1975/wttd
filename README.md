@@ -159,4 +159,5 @@ def home(request):
   * ```$ curl https://cli-assets.heroku.com/install-ubuntu.sh | sh```
 * Verificar a instalação ```$ heroku --version```
 * Fazer login no heroku via Heroku CLI ```$ heroku login```
+* Será aberto um navegador para digitar usuário e senha
 
