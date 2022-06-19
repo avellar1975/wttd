@@ -151,7 +151,8 @@ def home(request):
 ```
 <script src = "{% static 'js/main.js' %}"></script>
 ```
-## Fazendo deploy em produção
+<h1>Fazendo deploy em produção</h1>
+
 <img src='https://www3.assets.heroku.com/assets/home/hero/focus-647c57d2effb7d2dfb5871161afab3cf097de6339c02e85d84ea14747800fcb0.png' width='200' align='right'>
 
 * Criar uma conta no https://www.heroku.com
@@ -160,4 +161,81 @@ def home(request):
 * Verificar a instalação ```$ heroku --version```
 * Fazer login no heroku via Heroku CLI ```$ heroku login```
 * Será aberto um navegador para digitar usuário e senha
+
+<h2>Instalação do python decouple</h2>
+
+A biblioteca python-decouple vai ajudar gerenciar as configurações de ambientes.
+
+```(.wttd) ➜  wttd git:(main) pip install python-decouple```
+
+* Importar o módulo decouple no settings.py
+
+```from decouple import config```
+
+* Alterar as variáveis:
+
+```
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+```
+
+* Criar o arquivo .env na raiz do repositório (wttd)
+* Inserir os valores de SECRET_KEY e DEBUG originais no arquivo .env, retirando os espaços antes e após o sinal de igual
+
+
+<h2>Instalação do dj-database-url</h2>
+
+```(.wttd) ➜  wttd git:(main) pip install dj-database-url```
+
+* Importar o módulo decouple no settings.py
+
+```from dj_database_url import parse as dburl```
+
+* Alterar a configuração do settings.py
+
+<pre>
+
+default_dburl = 'sqlite:///' + BASE_DIR / 'db.sqlite3'
+
+DATABASES = {
+	'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
+}
+</pre>
+
+<h2>Outras configurações do settings.py</h2>
+<pre>
+ALLOWED_HOSTS = ['*']
+...
+STATIC_URL = 'static/'
+STATIC_ROOT = str(BASE_DIR / 'staticfiles')
+</pre>
+
+* Instalar o dj-static
+```
+(.wttd) ➜  wttd git:(main) pip install dj-static
+```
+
+* Alterar o arquivo wsgi.py
+
+<pre>
+import os
+from dj_static import Cling
+from django.core.wsgi import get_wsgi_application
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'eventex.settings')
+
+application = Cling(get_wsgi_application())
+</pre>
+
+<h2>Gerar o requirements.txt</h2>
+
+```(.wttd) ➜  wttd git:(main) pip freeze > requirements.txt```
+
+* Acrescentar dois módulos no requirements.txt
+gunicorn==20.1.0
+psycopg2-binary==2.9.3 
+
+<h2>Criar o arquivo Procfile na raiz do repositório</h2>
+
+* Ver o conteúdo no repositório
 
