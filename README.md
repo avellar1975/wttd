@@ -232,9 +232,10 @@ application = Cling(get_wsgi_application())
 ```(.wttd) ➜  wttd git:(main) pip freeze > requirements.txt```
 
 * Acrescentar dois módulos no requirements.txt
+```
 gunicorn==20.1.0
 psycopg2-binary==2.9.3 
-
+```
 <h2>Criar o arquivo Procfile na raiz do repositório</h2>
 
 * Ver o conteúdo no repositório
@@ -265,4 +266,9 @@ SECRET_KEY: sua-chave-secreta
 Setting DEBUG and restarting ⬢ eventex-avellar... done, v4
 DEBUG: True
 (.wttd) ➜  wttd git:(main)
+</pre>
+
+<h2>Hora do deploy</h2>
+<pre>
+(.wttd) ➜  wttd git:(main) git push heroku master --force 
 </pre>
