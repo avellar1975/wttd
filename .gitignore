@@ -109,10 +109,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-<<<<<<< HEAD
 .wttd
-=======
->>>>>>> f954963b21706f092da6f42907ea7dd9abe48edf
+
+
 
 # Spyder project settings
 .spyderproject
