@@ -268,7 +268,9 @@ DEBUG: True
 (.wttd) ➜  wttd git:(main)
 </pre>
 
+<img src='https://emojis.wiki/emoji-pics/apple/rocket-apple.png' width='100' align='right'>
 <h2>Hora do deploy</h2>
+
 <pre>
 (.wttd) ➜  wttd git:(main) git push heroku master --force 
 </pre>
