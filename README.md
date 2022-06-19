@@ -195,7 +195,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 <pre>
 
-default_dburl = 'sqlite:///' + BASE_DIR / 'db.sqlite3'
+default_dburl = 'sqlite:///' + str(BASE_DIR / 'db.sqlite3')
 
 DATABASES = {
 	'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
@@ -239,3 +239,30 @@ psycopg2-binary==2.9.3
 
 * Ver o conteúdo no repositório
 
+<h2>Envio para produção heroku</h2>
+<pre>
+(.wttd) ➜  wttd git:(main) heroku apps:create eventex-avellar
+Creating ⬢ eventex-avellar... done
+https://eventex-avellar.herokuapp.com/ | https://git.heroku.com/eventex-avellar.git
+(.wttd) ➜  wttd git:(main) git remote -v
+heroku  https://git.heroku.com/eventex-avellar.git (fetch)
+heroku  https://git.heroku.com/eventex-avellar.git (push)
+origin  git@github.com:avellar1975/wttd.git (fetch)
+origin  git@github.com:avellar1975/wttd.git (push)
+(.wttd) ➜  wttd git:(main) heroku open         
+</pre>
+
+<h2>Envio de variáveis de ambiente para o heroku</h2>
+<pre>
+(.wttd) ➜  wttd git:(main) cat .env            
+SECRET_KEY='sua-chave-secreta'
+DEBUG=True
+(.wttd) ➜  wttd git:(main) heroku config:set SECRET_KEY='sua-chave-secreta'  
+Setting SECRET_KEY and restarting ⬢ eventex-avellar... done, v3
+SECRET_KEY: sua-chave-secreta
+(.wttd) ➜  wttd git:(main)
+(.wttd) ➜  wttd git:(main) heroku config:set DEBUG=True            
+Setting DEBUG and restarting ⬢ eventex-avellar... done, v4
+DEBUG: True
+(.wttd) ➜  wttd git:(main)
+</pre>
